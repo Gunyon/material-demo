@@ -1,3 +1,46 @@
-<div class="container mt-5">
-  <mat-checkbox>Subscribe to newsletter</mat-checkbox>
+<div class="container mt-4">
+  <mat-checkbox>Check me!</mat-checkbox>
+
+  <br><br>
+
+  <mat-radio-group>
+    <mat-radio-button value="0">Male</mat-radio-button>
+    <mat-radio-button value="1" checked="checked">Female</mat-radio-button>
+  </mat-radio-group>
+
+  <br><br>
+
+  <mat-form-field>
+    <mat-select placeholder="Favorite food" [(ngModel)]="food">
+      <mat-option *ngFor="let food of foods" [value]="food.value">
+        {{food.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <br><br>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Favorite food" value="Sushi">
+  </mat-form-field>
+
+  <br><br>
+
+  <mat-form-field>
+    <input matInput [matDatepicker]="picker" [min]="minDate" (focus)="picker.open()" [max]="maxDate" placeholder="Choose a date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker touchUi #picker></mat-datepicker>
+  </mat-form-field>
+
+  <br><br>
+
+  <mat-icon>book</mat-icon>
+
+  <br><br>
+
+  <button mat-raised-button>Basic</button>
+  <button mat-raised-button color="primary">Primary</button>
+  <button mat-raised-button color="accent">Accent</button>
+  <button mat-raised-button color="warn">Warn</button>
+  <button mat-raised-button disabled>Disabled</button>
 </div>
